@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>薛浩的博客 - 追求卓越，宁静致远 - 备忘</title><link href="https://blog.stickmind.com/" rel="alternate"></link><link href="https://blog.stickmind.com/feeds/bei-wang.atom.xml" rel="self"></link><id>https://blog.stickmind.com/</id><updated>2019-12-29T20:24:00+08:00</updated><subtitle>To make your dreams happen</subtitle><entry><title>macOS 制作 Linux 系统启动盘</title><link href="https://blog.stickmind.com/create-a-bootable-linux-usb-in-macos.html" rel="alternate"></link><published>2019-12-29T20:24:00+08:00</published><updated>2019-12-29T20:24:00+08:00</updated><author><name>xuehao</name></author><id>tag:blog.stickmind.com,2019-12-29:/create-a-bootable-linux-usb-in-macos.html</id><summary type="html">&lt;p&gt;记录 macOS 命令行工具制作 Linux USB 启动盘的步骤&lt;/p&gt;</summary><content type="html">&lt;p&gt;有一个老的笔记本，运行 Windows 比较吃力，所以测试一些 Linux 发行版，目的是找一个驱动管理好，运行流畅的系统。&lt;/p&gt;
+&lt;p&gt;以下记录 macOS 命令行工具制作 USB 启动盘的步骤：&lt;/p&gt;
+&lt;h2&gt;1. 转换系统镜像格式&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ hdiutil convert -format UDRW -o linuxmint-19.1-cinnamon-64bit.dmg linuxmint-19.1-cinnamon-64bit.iso
+created: /Users/xuehao/Downloads/linuxmint-19.1-cinnamon-64bit.dmg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;2. 查看 U 盘编号&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ diskutil list
+......
+/dev/disk3 &lt;span class="o"&gt;(&lt;/span&gt;external, physical&lt;span class="o"&gt;)&lt;/span&gt;:
+   &lt;span class="c1"&gt;#:                       TYPE NAME                    SIZE       IDENTIFIER&lt;/span&gt;
+   &lt;span class="m"&gt;0&lt;/span&gt;:     FDisk_partition_scheme                        *15.6 GB    disk3
+   &lt;span class="m"&gt;1&lt;/span&gt;:                       0xCD                         &lt;span class="m"&gt;2&lt;/span&gt;.0 GB     disk3s1
+   &lt;span class="m"&gt;2&lt;/span&gt;:                       0xEF                         &lt;span class="m"&gt;4&lt;/span&gt;.2 MB     disk3s2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;3. 写入前先卸载 U 盘&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ diskutil umountDisk /dev/disk3
+Unmount of all volumes on disk3 was successful
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;4. 将系统写入 U 盘&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ sudo dd &lt;span class="nv"&gt;bs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1m &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;linuxmint-19.1-cinnamon-64bit.dmg &lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/rdisk3
+Password:
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;此过程会持续数分钟，请耐心等待。&lt;/p&gt;</content><category term="备忘"></category><category term="Tools"></category></entry></feed>

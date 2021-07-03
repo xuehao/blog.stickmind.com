@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+  <link id="dark-theme-style" rel="stylesheet" type="text/css"   media="(prefers-color-scheme: dark)"      href="./theme/stylesheet/dark-theme.min.css">
+
+  <link id="pygments-dark-theme" rel="stylesheet" type="text/css"      media="(prefers-color-scheme: dark)"      href="./theme/pygments/monokai.min.css">
+  <link id="pygments-light-theme" rel="stylesheet" type="text/css"     media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"      href="./theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/solid.css">
+
+
+  <link href="https://blog.stickmind.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+    title="薛浩的博客 - 追求卓越，宁静致远 Atom">
+
+
+  <link rel="shortcut icon" href="theme/img/notebook.png" type="image/x-icon">
+  <link rel="icon" href="theme/img/notebook.png" type="image/x-icon">
+
+
+
+
+
+<meta name="author" content="xuehao" />
+<meta name="description" content="学习使用《C 语言的科学和艺术》 与 《C 程序设计的抽象思维》 两本书用到的库。" />
+<meta name="keywords" content="C Programming, Computer Science, Data Structures, Algorithms">
+
+<link rel="alternate" href="./how-to-use-roberts-cs1-c-zh-CN.html" hreflang="zh-CN" />
+<link rel="alternate" href="./how-to-use-roberts-cs1-c-en.html" hreflang="en" />
+
+  <meta property="og:site_name" content="薛浩的博客 - 追求卓越，宁静致远"/>
+  <meta property="og:title" content="Roberts.CS1.C 库文件的使用"/>
+  <meta property="og:description" content="学习使用《C 语言的科学和艺术》 与 《C 程序设计的抽象思维》 两本书用到的库。"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="./how-to-use-roberts-cs1-c-zh-CN.html"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2019-12-22 00:24:00+08:00"/>
+  <meta property="article:modified_time" content="2021-06-30 07:04:00+08:00"/>
+  <meta property="article:author" content="./author/xuehao.html">
+  <meta property="article:section" content="笔记"/>
+  <meta property="article:tag" content="C Programming"/>
+  <meta property="article:tag" content="Computer Science"/>
+  <meta property="article:tag" content="Data Structures"/>
+  <meta property="article:tag" content="Algorithms"/>
+  <meta property="og:image" content="">
+
+  <title>薛浩的博客 - 追求卓越，宁静致远 &ndash; Roberts.CS1.C 库文件的使用</title>
+
+</head>
+
+<body >
+  <aside>
+    <div>
+      <a href="./">
+        <img src="./theme/img/profile.png" alt="xuehao's blog" title="xuehao's blog">
+      </a>
+
+      <h1>
+        <a href="./">xuehao's blog</a>
+      </h1>
+
+<p>To make your dreams happen</p>
+
+      <nav>
+        <ul class="list">
+
+
+          <li>
+            <a target="_self"
+              href="./pages/projects-zh-CN.html">
+              Projects
+            </a>
+          </li>
+
+          <li>
+            <a target="_self" href="https://www.stickmind.com">resume</a>
+          </li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li>
+          <a  class="sc-github" href="https://github.com/xuehao" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li>
+          <a  class="sc-envelope" href="mailto:xuehao0618@icloud.com" target="_blank">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </li>
+        <li>
+          <a  class="sc-rss" href="/feeds/all.atom.xml" target="_blank">
+            <i class="fas fa-rss"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="./">Home</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="https://blog.stickmind.com/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+          <div class="translations">
+    <a class="active" href="./how-to-use-roberts-cs1-c-zh-CN.html">zh-CN</a>
+        <a href="./how-to-use-roberts-cs1-c-en.html">en</a>
+    </div>
+
+    <h1 id="how-to-use-roberts-cs1-c">Roberts.CS1.C 库文件的使用</h1>
+    <p>
+      Posted on 2019-12-22 in <a href="./category/bi-ji.html">笔记</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p><strong>《C 语言的科学和艺术》</strong> 与 <strong>《C 程序设计的抽象思维》</strong> 两本书用到的库。</p>
+<h2>1. 如何编译库文件？</h2>
+<p>按如下步骤，创建一个个人 <em>root</em> 系统（避免系统权限）以及两本书中用到的 <em>libcs.a</em> 静态库。</p>
+<p>下载该仓库到个人电脑。</p>
+<div class="highlight"><pre><span></span><code>$ git clone https://github.com/xuehao/Roberts.CS1.C.git
+</code></pre></div>
+
+<p>进入 <em>cslib</em> 文件夹。执行 <em>make</em> 命令，生成库文件。</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> Roberts.CS1.C <span class="o">&amp;&amp;</span> <span class="nb">cd</span> cslib
+$ make
+</code></pre></div>
+
+<p>如果成功，此时会生成一个 <em>root</em> 文件夹。复制 <em>root</em> 文件到个人目录。</p>
+<div class="highlight"><pre><span></span><code>$ mv root ~ <span class="c1"># 如果之前已经建立 root 系统，请手动复制对应目录文件</span>
+</code></pre></div>
+
+<h2>2. 如何连接库文件？</h2>
+<p>把构建 C 程序用到的编译器选项和连接器选项打包放进通用 <em>Makefile</em> 中。</p>
+<div class="highlight"><pre><span></span><code>CC = gcc
+CFLAGS = -I<span class="cp">${</span><span class="n">HOME</span><span class="cp">}</span>/root/include/cs -g -Wall -std=gnu11 -O3
+LDLIBS = -L<span class="cp">${</span><span class="n">HOME</span><span class="cp">}</span>/root/lib/ -lcs -lm
+</code></pre></div>
+
+<p>使用 <em>test-cslib</em> 中的通用 <em>Makefile</em> 文件编译 <em>house.c</em> 测试程序，看看如何连接库文件。</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> .. <span class="o">&amp;&amp;</span> <span class="nb">cd</span> test-cslib
+$ make house
+$ ./house
+</code></pre></div>
+
+<p>此时会生成名为 <em>graphics.ps</em> 的图像文件。</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="./tag/c-programming.html">C Programming</a>
+      <a href="./tag/computer-science.html">Computer Science</a>
+      <a href="./tag/data-structures.html">Data Structures</a>
+      <a href="./tag/algorithms.html">Algorithms</a>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  薛浩 &copy; 2021 |
+
+Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+<script id="dark-theme-script" src="./theme/dark-theme/dark-theme.min.js"
+  data-enable-auto-detect-theme="True"
+  data-default-theme="light" type="text/javascript">
+  </script>
+</p>
+<p>
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"
+    target="_blank">
+    <img alt="Creative Commons License" title="Creative Commons License" style="border-width:0"  src="./theme/img/cc/by-sa.png"  width="80" height="15" />
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " 薛浩的博客 - 追求卓越，宁静致远 ",
+  "url" : ".",
+  "image": "",
+  "description": "BLOG.STICKMIND.COM - 薛浩的博客 - 严谨、有趣、持续更新：数学、编程、统计、英语、音乐、摄影……"
+}
+</script>
+
+</body>
+
+</html>

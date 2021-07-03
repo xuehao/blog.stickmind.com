@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>薛浩的博客 - 追求卓越，宁静致远</title><link href="https://blog.stickmind.com/" rel="alternate"></link><link href="https://blog.stickmind.com/feeds/all-zh-CN.atom.xml" rel="self"></link><id>https://blog.stickmind.com/</id><updated>2021-06-30T07:04:00+08:00</updated><subtitle>To make your dreams happen</subtitle><entry><title>Roberts.CS1.C 库文件的使用</title><link href="https://blog.stickmind.com/how-to-use-roberts-cs1-c-zh-CN.html" rel="alternate"></link><published>2019-12-22T00:24:00+08:00</published><updated>2021-06-30T07:04:00+08:00</updated><author><name>xuehao</name></author><id>tag:blog.stickmind.com,2019-12-22:/how-to-use-roberts-cs1-c-zh-CN.html</id><summary type="html">&lt;p&gt;学习使用《C 语言的科学和艺术》 与 《C 程序设计的抽象思维》 两本书用到的库。&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;《C 语言的科学和艺术》&lt;/strong&gt; 与 &lt;strong&gt;《C 程序设计的抽象思维》&lt;/strong&gt; 两本书用到的库。&lt;/p&gt;
+&lt;h2&gt;1. 如何编译库文件？&lt;/h2&gt;
+&lt;p&gt;按如下步骤，创建一个个人 &lt;em&gt;root&lt;/em&gt; 系统（避免系统权限）以及两本书中用到的 &lt;em&gt;libcs.a&lt;/em&gt; 静态库。&lt;/p&gt;
+&lt;p&gt;下载该仓库到个人电脑。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ git clone https://github.com/xuehao/Roberts.CS1.C.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;进入 &lt;em&gt;cslib&lt;/em&gt; 文件夹。执行 &lt;em&gt;make&lt;/em&gt; 命令，生成库文件。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; Roberts.CS1.C &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;cd&lt;/span&gt; cslib
+$ make
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;如果成功，此时会生成一个 &lt;em&gt;root&lt;/em&gt; 文件夹。复制 &lt;em&gt;root&lt;/em&gt; 文件到个人目录。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ mv root ~ &lt;span class="c1"&gt;# 如果之前已经建立 root 系统，请手动复制对应目录文件&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;2. 如何连接库文件？&lt;/h2&gt;
+&lt;p&gt;把构建 C 程序用到的编译器选项和连接器选项打包放进通用 &lt;em&gt;Makefile&lt;/em&gt; 中。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;CC = gcc
+CFLAGS = -I&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;/root/include/cs -g -Wall -std=gnu11 -O3
+LDLIBS = -L&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;/root/lib/ -lcs -lm
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;使用 &lt;em&gt;test-cslib&lt;/em&gt; 中的通用 &lt;em&gt;Makefile&lt;/em&gt; 文件编译 &lt;em&gt;house.c&lt;/em&gt; 测试程序，看看如何连接库文件。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; .. &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;cd&lt;/span&gt; test-cslib
+$ make house
+$ ./house
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;此时会生成名为 &lt;em&gt;graphics.ps&lt;/em&gt; 的图像文件。&lt;/p&gt;</content><category term="笔记"></category><category term="C Programming"></category><category term="Computer Science"></category><category term="Data Structures"></category><category term="Algorithms"></category></entry></feed>

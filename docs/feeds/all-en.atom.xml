@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>薛浩的博客 - 追求卓越，宁静致远</title><link href="https://blog.stickmind.com/" rel="alternate"></link><link href="https://blog.stickmind.com/feeds/all-en.atom.xml" rel="self"></link><id>https://blog.stickmind.com/</id><updated>2021-06-30T07:04:00+08:00</updated><subtitle>To make your dreams happen</subtitle><entry><title>How to use Roberts.CS1.C</title><link href="https://blog.stickmind.com/how-to-use-roberts-cs1-c-en.html" rel="alternate"></link><published>2019-12-22T00:24:00+08:00</published><updated>2021-06-30T07:04:00+08:00</updated><author><name>xuehao</name></author><id>tag:blog.stickmind.com,2019-12-22:/how-to-use-roberts-cs1-c-en.html</id><summary type="html">&lt;p&gt;Library source code for the Eric Roberts texts, The Art and Science of C: A Library-Based Approach and Programming Abstractions in C: A Second Course in Computer Science.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Library source code for the Eric Roberts texts, &lt;em&gt;The Art and Science of C: A Library-Based Approach&lt;/em&gt; and &lt;em&gt;Programming Abstractions in C: A Second Course in Computer Science&lt;/em&gt;.&lt;/p&gt;
+&lt;h2&gt;1. How to build the library?&lt;/h2&gt;
+&lt;p&gt;Follow these steps to build a personal root system which don't need system permission and a static library called &lt;em&gt;libcs.a&lt;/em&gt; for the upper two books.&lt;/p&gt;
+&lt;p&gt;Download this repo to your folder.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ git clone https://github.com/xuehao/Roberts.CS1.C.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Switch to the folder &lt;em&gt;cslib&lt;/em&gt;. Use &lt;em&gt;make&lt;/em&gt; to build the library.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; Roberts.CS1.C &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;cd&lt;/span&gt; cslib
+$ make
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If succeed, you'll find a folder called &lt;em&gt;root&lt;/em&gt;. Copy the &lt;em&gt;root&lt;/em&gt; folder to your home directory.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ mv root ~
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;2. How to connect the library?&lt;/h2&gt;
+&lt;p&gt;Package all the options for the compiler and the linker used while building the C program into the general &lt;em&gt;Makefile&lt;/em&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;CC = gcc
+CFLAGS = -I&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;/root/include/cs -g -Wall -std=gnu11 -O3
+LDLIBS = -L&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;/root/lib/ -lcs -lm
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Use the general &lt;em&gt;Makefile&lt;/em&gt; in the &lt;em&gt;test-cslib&lt;/em&gt; folder to build the &lt;em&gt;house.c&lt;/em&gt; program and to see how to connect the library.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; .. &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;cd&lt;/span&gt; test-cslib
+$ make house
+$ ./house
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This will produce a data file called &lt;em&gt;graphics.ps&lt;/em&gt;.&lt;/p&gt;</content><category term="笔记"></category><category term="C Programming"></category><category term="Computer Science"></category><category term="Data Structures"></category><category term="Algorithms"></category></entry></feed>
