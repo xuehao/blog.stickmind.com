@@ -17,13 +17,14 @@ Embedded Development:
 
 Computer Science:
 
-- [Standford - CS106A: Programming Methodology](000)
-- [Standford - CS106B: Programming Abstraction](000)
+- [Standford - CS106A: Programming Methodology](https://github.com/xuehao/cs-stick-in-mind)
+- [Standford - CS106B: Programming Abstraction](https://github.com/xuehao/cs-stick-in-mind)
 
 Mathmatics:
 
-- [MIT - 18.01: Single Variable Calculus](https://www.stickmind.com/mathematics/#/) *Started on 07/03/2021*
+- [MIT - 18.01: Single Variable Calculus](https://www.stickmind.com/mathematics/) *Started on 07/03/2021*
 
 English:
 
+- [English News](https://www.stickmind.com/english/)
 - [不一样的新概念](./000)
