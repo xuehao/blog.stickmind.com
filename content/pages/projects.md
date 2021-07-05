@@ -26,5 +26,4 @@ Mathmatics:
 
 English:
 
-- [English News](https://www.stickmind.com/english/)
-- [不一样的新概念](./000)
+- [English Learning](https://www.stickmind.com/english-learning/)
