@@ -22,8 +22,8 @@ Computer Science:
 
 Mathmatics:
 
-- [MIT - 18.01: Single Variable Calculus](https://www.stickmind.com/mathematics/) *Started on 07/03/2021*
+- [MIT - 18.01: Single Variable Calculus](https://mathmatics.stickmind.com/) *Started on 07/03/2021*
 
 English:
 
-- [English Learning](https://www.stickmind.com/english-learning/)
+- [English Learning](https://english.stickmind.com/)
